@@ -21,6 +21,8 @@ class RepoProduk {
       log('${e.toString()}');
     }
   }
+    // future<namadiresnya> getjordan() async{
+
 
   Future<ResGetJordan?> getJordan() async {
     try {

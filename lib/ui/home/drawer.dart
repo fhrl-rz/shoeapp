@@ -5,7 +5,7 @@ import 'package:shoeapp/data_global.dart';
 import 'package:shoeapp/ui/Paymet/history.dart';
 import 'package:shoeapp/ui/home/listorder.dart';
 import 'package:shoeapp/ui/home/pemesanan.dart';
-import 'package:shoeapp/ui/home/profile.dart';
+import 'package:shoeapp/ui/home/profile/profile.dart';
 
 class DrawerPage extends StatelessWidget {
   const DrawerPage({Key? key}) : super(key: key);
@@ -35,7 +35,7 @@ class DrawerPage extends StatelessWidget {
                       child: Icon(Icons.person),
                     ),
                     Text(
-                      '${dataGlobal.user?.userNama}',
+                     '${dataGlobal.user?.userEmail}',
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,7 +7,7 @@ import 'package:shoeapp/network/api.dart';
 import 'package:shoeapp/res/res_get_produk.dart';
 import 'package:shoeapp/ui/home/drawer.dart';
 import 'package:shoeapp/ui/home/list.dart';
-import 'package:shoeapp/ui/home/profile.dart';
+import 'package:shoeapp/ui/home/profile/profile.dart';
 import 'package:shoeapp/ui/trendingnow/trendingnow.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,6 +19,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   ProdukCubit? cubit;
+
   @override
   Widget build(BuildContext context) {
     return Theme(
@@ -142,14 +144,16 @@ class _HomePageState extends State<HomePage> {
                                         },
                                         child: Column(
                                           children: [
-                                            Image.network(imageUrl +
-                                                "${data?.produkGambar}"),
-                                            Text(
-                                              '${data?.produkNama}',
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                              ),
+                                            CachedNetworkImage(
+                                              imageUrl: imageUrl +
+                                                  "${data?.produkGambar}",
+                                              placeholder: (context, url) =>
+                                                  new CircularProgressIndicator(),
+                                              errorWidget:
+                                                  (context, url, error) =>
+                                                      new Icon(Icons.error),
                                             ),
+                                            Text('${data?.produkNama}'),
                                           ],
                                         ),
                                       ),

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
@@ -6,7 +7,7 @@ import 'package:shoeapp/cubit/getkeranjang/getkeranjang_state.dart';
 import 'package:shoeapp/network/api.dart';
 import 'package:shoeapp/res/res_get_keranjang.dart';
 import 'package:shoeapp/ui/Paymet/pembayaran.dart';
-import 'package:shoeapp/ui/home/profile.dart';
+import 'package:shoeapp/ui/home/profile/profile.dart';
 
 class PemesananPage extends StatefulWidget {
   const PemesananPage({Key? key}) : super(key: key);
@@ -95,8 +96,15 @@ class _PemesananPageState extends State<PemesananPage> {
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(20),
                                       ),
-                                      child: Image.network(
-                                          imageUrl + "${data?.detailImg}"),
+                                      child: CachedNetworkImage(
+                                        imageUrl: imageUrl +
+                                            "${data?.detailImg}",
+                                        placeholder: (context, url) =>
+                                        new CircularProgressIndicator(),
+                                        errorWidget:
+                                            (context, url, error) =>
+                                        new Icon(Icons.error),
+                                      ),
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.all(8.0),
@@ -242,39 +250,39 @@ class _PemesananPageState extends State<PemesananPage> {
                                     ),
                                   ],
                                 ),
-                                // SizedBox(height:260,),
-                                // Row(
-                                //   children: [
-                                //     Expanded(
-                                //       child: Container(
-                                //         margin:
-                                //             EdgeInsets.fromLTRB(10, 0, 10, 0),
-                                //         child: ClipRRect(
-                                //           borderRadius:
-                                //               BorderRadius.circular(15),
-                                //           child: MaterialButton(
-                                //             onPressed: () {
-                                //               Navigator.push(context, MaterialPageRoute(builder: (context) => PaymnetPage()));
-                                //             },
-                                //             padding: EdgeInsets.symmetric(
-                                //                 vertical: 15),
-                                //             color: Color(0xffE96E6E),
-                                //             elevation: 0,
-                                //             child: Text(
-                                //               "Checkout",
-                                //               textAlign: TextAlign.center,
-                                //               style: TextStyle(
-                                //                 color: Color(0xffFFFFFF),
-                                //                 fontSize: 16,
-                                //                 fontWeight: FontWeight.bold,
-                                //               ),
-                                //             ),
-                                //           ),
-                                //         ),
-                                //       ),
-                                //     ),
-                                //   ],
-                                // ),
+                                SizedBox(height:260,),
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        margin:
+                                            EdgeInsets.fromLTRB(10, 0, 10, 0),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(15),
+                                          child: MaterialButton(
+                                            onPressed: () {
+                                              Navigator.push(context, MaterialPageRoute(builder: (context) => PaymnetPage()));
+                                            },
+                                            padding: EdgeInsets.symmetric(
+                                                vertical: 15),
+                                            color: Color(0xffE96E6E),
+                                            elevation: 0,
+                                            child: Text(
+                                              "Checkout",
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                color: Color(0xffFFFFFF),
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ],
                             ),
                           ),

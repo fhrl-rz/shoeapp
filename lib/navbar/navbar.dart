@@ -5,7 +5,7 @@ import 'package:shoeapp/ui/home/homepage.dart';
 
 import 'package:shoeapp/ui/home/listorder.dart';
 import 'package:shoeapp/ui/home/pemesanan.dart';
-import 'package:shoeapp/ui/home/profile.dart';
+import 'package:shoeapp/ui/home/profile/profile.dart';
 
 class NavbarPage extends StatefulWidget {
   final int? initTab;

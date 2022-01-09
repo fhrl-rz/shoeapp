@@ -231,65 +231,7 @@ class _ListPageState extends State<ListPage> {
                           },
                         ),
                       ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Text(
-                        'Colors',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              primary: Color(0xff91A1B0),
-                              shape: CircleBorder(),
-                              padding: EdgeInsets.all(20),
-                            ),
-                            child: null,
-                          ),
-                          ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              primary: Color(0xffB11D1D),
-                              shape: CircleBorder(),
-                              padding: EdgeInsets.all(15),
-                            ),
-                            child: null,
-                          ),
-                          ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              primary: Color(0xff1F44A3),
-                              shape: CircleBorder(),
-                              padding: EdgeInsets.all(15),
-                            ),
-                            child: null,
-                          ),
-                          ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              primary: Color(0xff9F632A),
-                              shape: CircleBorder(),
-                              padding: EdgeInsets.all(15),
-                            ),
-                            child: null,
-                          ),
-                          ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              primary: Color(0xff1D752B),
-                              shape: CircleBorder(),
-                              padding: EdgeInsets.all(15),
-                            ),
-                            child: null,
-                          ),
-                        ],
-                      ),
+
                     ],
                   ),
                 ),

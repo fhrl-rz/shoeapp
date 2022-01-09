@@ -10,6 +10,7 @@ const String apiProfile = "$baseUrl/getProfile";
 const String apiProduk = "$baseUrl/getProduk";
 const String apiKeranjang = "$baseUrl/addItemKeranjang";
 const String apigetKeranjang = "$baseUrl/getKeranjang";
+const String apiUpdateProfile = "$baseUrl/updateDataUser";
 const String apiJordan = "$baseUrl/getJordan";
 const String apiAdidas = "$baseUrl/getAdidas";
 const String apiNike = "$baseUrl/getNike";
